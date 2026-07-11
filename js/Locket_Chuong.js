@@ -27,7 +27,7 @@ var chuong = {
     purchase_date: "2024-07-28T01:04:17Z",
     store: "app_store",
   },
-  chuong = {
+  chuong2 = {
     grace_period_expires_date: null,
     purchase_date: "2024-07-28T01:04:17Z",
     product_identifier: "com.chuong.premium.yearly",
@@ -40,15 +40,15 @@ if (match) {
   let [e, s] = mapping[match];
 
   s
-    ? ((chuong.product_identifier = s),
+    ? ((chuong2.product_identifier = s),
       (obj.subscriber.subscriptions[s] = chuong))
     : (obj.subscriber.subscriptions["com.chuong.premium.yearly"] =
         chuong);
 
-  obj.subscriber.entitlements[e] = chuong;
+  obj.subscriber.entitlements[e] = chuong2;
 } else {
   obj.subscriber.subscriptions["com.chuong.premium.yearly"] = chuong;
-  obj.subscriber.entitlements.pro = chuong;
+  obj.subscriber.entitlements.pro = chuong2;
 }
 
 $done({
